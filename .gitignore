@@ -1,0 +1,23 @@
+# Node.js specific
+node_modules/
+npm-debug.log
+
+.env
+
+# Editor config files
+.editorconfig
+.vscode/
+.idea/
+
+# Test results
+coverage/
+test-results/
+
+# Build artifacts
+dist/
+build/
+
+# Temporary files
+*.log
+*.tmp
+*.swp
