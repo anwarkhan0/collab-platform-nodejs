@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors'); // Import CORS packagers
 
 
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
 require('dotenv').config();
 
 
@@ -12,10 +14,12 @@ connectDB();
 //middlewares
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
 
 
 module.exports = app;
